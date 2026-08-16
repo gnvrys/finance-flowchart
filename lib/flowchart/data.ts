@@ -106,7 +106,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If saving anything feels impossible right now, don't aim for $500 up front. Automate even $5 to $10 per paycheck into a separate account — the habit matters more than the amount at this stage.",
     learnMore: [
-      { title: "The Index Card", author: "Helaine Olen & Harold Pollack" },
+      {
+        title: "The Index Card",
+        author: "Helaine Olen & Harold Pollack",
+        url: "https://www.google.com/search?tbm=bks&q=The%20Index%20Card%20Helaine%20Olen%20Harold%20Pollack",
+      },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
   },
@@ -127,7 +131,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If the gap is about spending, start by tracking one month of every expense before cutting anything — you often can't see where to cut until you can see where it's going. If the gap is about income, that's a different problem (see next steps), and no amount of budgeting will fully close it.",
     learnMore: [
-      { title: "Get Good with Money", author: "Tiffany Aliche" },
+      {
+        title: "Get Good with Money",
+        author: "Tiffany Aliche",
+        url: "https://www.google.com/search?tbm=bks&q=Get%20Good%20with%20Money%20Tiffany%20Aliche",
+      },
       { title: "r/povertyfinance", url: "https://www.reddit.com/r/povertyfinance/" },
     ],
   },
@@ -147,7 +155,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If you're not sure how much to raise your contribution by, aim for the exact percentage your plan needs to get the full match — usually shown in your plan's summary — and set it as one one-time change through payroll rather than trying to get it perfect.",
     learnMore: [
-      { title: "The Bogleheads' Guide to Investing", author: "Taylor Larimore, Mel Lindauer & Michael LeBoeuf" },
+      {
+        title: "The Bogleheads' Guide to Investing",
+        author: "Taylor Larimore, Mel Lindauer & Michael LeBoeuf",
+        url: "https://www.google.com/search?tbm=bks&q=The%20Bogleheads%20Guide%20to%20Investing%20Taylor%20Larimore%20Mel%20Lindauer%20Michael%20LeBoeuf",
+      },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
   },
@@ -168,7 +180,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If you have several balances and freeze up trying to pick an order, it doesn't need to be perfect: highest interest rate first saves the most money, smallest balance first gets you a faster win to build momentum. Either is a reasonable choice — the main thing is picking one and starting.",
     learnMore: [
-      { title: "The Total Money Makeover", author: "Dave Ramsey" },
+      {
+        title: "The Total Money Makeover",
+        author: "Dave Ramsey",
+        url: "https://www.google.com/search?tbm=bks&q=The%20Total%20Money%20Makeover%20Dave%20Ramsey",
+      },
       { title: "r/personalfinance wiki (debt section)", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
   },
@@ -189,7 +205,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If three to six months feels like an overwhelming number, break it into a target you can actually track, like one month at a time, and automate a transfer toward it each payday.",
     learnMore: [
-      { title: "Your Money or Your Life", author: "Vicki Robin & Joe Dominguez" },
+      {
+        title: "Your Money or Your Life",
+        author: "Vicki Robin & Joe Dominguez",
+        url: "https://www.google.com/search?tbm=bks&q=Your%20Money%20or%20Your%20Life%20Vicki%20Robin%20Joe%20Dominguez",
+      },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
   },
@@ -210,7 +230,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If choosing between Roth and traditional feels paralyzing, Roth is a reasonable default if you expect to be in a similar or higher tax bracket later, which is common earlier in a career — you can always adjust in future years as your income changes.",
     learnMore: [
-      { title: "The Simple Path to Wealth", author: "JL Collins" },
+      {
+        title: "The Simple Path to Wealth",
+        author: "JL Collins",
+        url: "https://www.google.com/search?tbm=bks&q=The%20Simple%20Path%20to%20Wealth%20JL%20Collins",
+      },
       { title: "r/Bogleheads", url: "https://www.reddit.com/r/Bogleheads/" },
     ],
   },
@@ -231,7 +255,11 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     ifUnclear:
       "If you don't have a strong opinion yet on goals or investing style, a simple, low-cost diversified index fund is a reasonable default while you figure out the rest — the fundamentals being covered already put you ahead of most of this decision's stakes.",
     learnMore: [
-      { title: "The Psychology of Money", author: "Morgan Housel" },
+      {
+        title: "The Psychology of Money",
+        author: "Morgan Housel",
+        url: "https://www.google.com/search?tbm=bks&q=The%20Psychology%20of%20Money%20Morgan%20Housel",
+      },
       { title: "r/financialindependence", url: "https://www.reddit.com/r/financialindependence/" },
     ],
   },

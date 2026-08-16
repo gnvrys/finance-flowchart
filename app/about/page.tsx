@@ -1,8 +1,16 @@
+import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 
 export default function AboutPage() {
   return (
     <main className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-4 px-6 py-16">
+      <Link
+        href="/"
+        className="inline-flex w-fit items-center text-sm font-medium text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+      >
+        &larr; Back to home
+      </Link>
+
       <h1 className="text-2xl font-semibold">About this quiz</h1>
       <p className="text-zinc-700 dark:text-zinc-300">
         The order of priorities behind this quiz, building a small cushion, capturing an employer

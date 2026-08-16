@@ -72,6 +72,7 @@ export default function ResultCard({
           <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
             {node.learnMore.map((entry) => (
               <li key={entry.title}>
+                <span aria-hidden="true">{entry.author ? "📖" : "💬"} </span>
                 {entry.url ? (
                   <a
                     href={entry.url}
