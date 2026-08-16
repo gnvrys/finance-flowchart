@@ -8,7 +8,14 @@ export type QuestionNode = {
   type: "question";
   question: string;
   helperText?: string;
+  notSureHelp?: string;
   options: QuestionOption[];
+};
+
+export type LearnMoreEntry = {
+  title: string;
+  author?: string;
+  url?: string;
 };
 
 export type ResultNode = {
@@ -19,6 +26,8 @@ export type ResultNode = {
   rationale: string;
   nextSteps: string[];
   relatedResultIds?: string[];
+  ifUnclear?: string;
+  learnMore?: LearnMoreEntry[];
 };
 
 export type FlowchartNode = QuestionNode | ResultNode;

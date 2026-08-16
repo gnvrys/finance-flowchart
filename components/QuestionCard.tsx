@@ -17,6 +17,14 @@ export default function QuestionCard({
         {node.helperText && (
           <p className="text-sm text-zinc-500 dark:text-zinc-400">{node.helperText}</p>
         )}
+        {node.notSureHelp && (
+          <details className="text-sm text-zinc-500 dark:text-zinc-400">
+            <summary className="cursor-pointer font-medium hover:text-zinc-800 dark:hover:text-zinc-100">
+              Not sure how to answer?
+            </summary>
+            <p className="mt-2 text-zinc-600 dark:text-zinc-400">{node.notSureHelp}</p>
+          </details>
+        )}
       </div>
       <div className="flex flex-col gap-3">
         {node.options.map((option) => (
