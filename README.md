@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Money Priorities Quiz
 
-## Getting Started
+A short, branching flowchart quiz that tells you what to focus on next with your money, and why, instead of pointing you at another long article. Answer a handful of yes/no questions about your situation (do you have a cushion for a surprise expense, are you capturing your full employer 401(k) match, do you have high-interest debt, and so on) and land on a single, clear result page with a recommendation and the reasoning behind it.
 
-First, run the development server:
+The question order and priorities are adapted from ideas widely discussed in personal finance communities like r/personalfinance, rewritten in original wording, not copied text or imagery.
+
+## Why this exists
+
+Personal finance education is everywhere, but most of it assumes you have time to read a book or dig through a wiki. This is a low-friction alternative: no account, no data entry beyond your quiz answers, no numeric calculators, just a quick path to "here's your priority right now."
+
+## Stack
+
+- [Next.js](https://nextjs.org/) 16 (App Router) + TypeScript
+- Tailwind CSS
+- Built as a static export (`output: 'export'`), no backend server required
+
+## Project structure
+
+- `lib/flowchart/data.ts` — all quiz content lives here (questions, options, results). Editing or extending the quiz means editing this file only, no component changes needed.
+- `lib/flowchart/engine.ts` / `types.ts` — the data model and small helpers (`getNode`, `isResultNode`, etc.)
+- `app/quiz` — the interactive quiz flow (client-side state via `useReducer`)
+- `app/result/[resultId]` — statically generated result pages, one per outcome
+- `scripts/validate-flowchart.ts` — a graph-integrity check (every branch resolves, every result is reachable) that runs automatically before every build
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Other scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run validate` — check the flowchart data for broken or unreachable branches
+- `npm run build` — production build (runs `validate` first, then a static export to `out/`)
+- `npm run lint` — ESLint
 
-## Learn More
+## Disclaimer
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This quiz gives a general starting point, not a full financial plan or personalized financial advice.
