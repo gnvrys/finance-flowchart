@@ -10,6 +10,13 @@ export default function ResultCard({
 }) {
   return (
     <div className="flex flex-col gap-6">
+      <Link
+        href="/quiz"
+        className="inline-flex w-fit items-center text-sm font-medium text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+      >
+        &larr; Back to last question
+      </Link>
+
       <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
         {node.title}
       </h1>
@@ -51,10 +58,10 @@ export default function ResultCard({
       )}
 
       <Link
-        href="/quiz"
-        className="inline-flex w-fit items-center rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+        href="/quiz?restart=1"
+        className="inline-flex w-fit items-center rounded-full bg-zinc-900 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
       >
-        Take the quiz again
+        Restart the quiz
       </Link>
     </div>
   );

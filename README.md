@@ -8,6 +8,44 @@ The question order and priorities are adapted from ideas widely discussed in per
 
 Personal finance education is everywhere, but most of it assumes you have time to read a book or dig through a wiki. This is a low-friction alternative: no account, no data entry beyond your quiz answers, no numeric calculators, just a quick path to "here's your priority right now."
 
+## The full flow
+
+Every question and every possible outcome, in one diagram. This mirrors `lib/flowchart/data.ts` exactly — if you edit that file, update this diagram too.
+
+```mermaid
+flowchart TD
+    Q1{{"Could you cover a surprise expense without a credit card?"}}
+    Q2{{"Does your income cover the essentials?"}}
+    Q3{{"Does your employer offer a matching retirement plan?"}}
+    Q4{{"Are you getting the full match?"}}
+    Q5{{"Any debt above roughly 7-8% interest?"}}
+    Q6{{"3-6 months of essential expenses saved?"}}
+    Q7{{"Regularly funding an IRA or HSA beyond the match?"}}
+
+    R1(["Build a Starter Cushion First"])
+    R2(["Stabilize Income & Essential Expenses"])
+    R3(["Capture Your Full Employer Match"])
+    R4(["Pay Down High-Interest Debt"])
+    R5(["Build a Full Emergency Fund"])
+    R6(["Make Full Use of Tax-Advantaged Accounts"])
+    R7(["Grow Wealth Further"])
+
+    Q1 -->|No / not sure| R1
+    Q1 -->|Yes| Q2
+    Q2 -->|No| R2
+    Q2 -->|Yes| Q3
+    Q3 -->|No| Q5
+    Q3 -->|Yes| Q4
+    Q4 -->|No| R3
+    Q4 -->|Yes| Q5
+    Q5 -->|Yes| R4
+    Q5 -->|No| Q6
+    Q6 -->|No| R5
+    Q6 -->|Yes| Q7
+    Q7 -->|No| R6
+    Q7 -->|Yes| R7
+```
+
 ## Stack
 
 - [Next.js](https://nextjs.org/) 16 (App Router) + TypeScript

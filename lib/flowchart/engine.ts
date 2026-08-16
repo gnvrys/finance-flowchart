@@ -24,3 +24,7 @@ export function getAllResultIds(): string[] {
     .filter(isResultNode)
     .map((node) => node.id);
 }
+
+export function hasNode(nodeId: string): boolean {
+  return nodeId in flowchartNodes;
+}
