@@ -42,7 +42,7 @@ export default function Home() {
 
       <div>
         <Link
-          href="/quiz"
+          href="/quiz?restart=1"
           className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-emerald-700"
         >
           Start the quiz
