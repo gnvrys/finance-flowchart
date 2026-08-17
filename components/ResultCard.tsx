@@ -49,6 +49,32 @@ export default function ResultCard({
         </ul>
       </div>
 
+      {node.watchAndFollow && node.watchAndFollow.length > 0 && (
+        <div>
+          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Watch &amp; follow</h2>
+          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2">
+            {node.watchAndFollow.map((entry) => (
+              <a
+                key={entry.title}
+                href={entry.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-36 flex-shrink-0 snap-start flex-col gap-1 rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-sm transition-colors hover:border-emerald-500 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-500 dark:hover:bg-emerald-950"
+              >
+                <span className="text-lg" aria-hidden="true">
+                  ▶️
+                </span>
+                {entry.duration && (
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.duration}</span>
+                )}
+                <span className="font-medium text-zinc-800 dark:text-zinc-200">{entry.title}</span>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.creator}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
       {node.learnMore && node.learnMore.length > 0 && (
         <div>
           <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Learn more</h2>

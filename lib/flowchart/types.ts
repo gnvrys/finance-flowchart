@@ -18,6 +18,13 @@ export type LearnMoreEntry = {
   url?: string;
 };
 
+export type WatchAndFollowEntry = {
+  title: string;
+  creator: string;
+  url: string;
+  duration?: string;
+};
+
 export type ResultNode = {
   id: string;
   type: "result";
@@ -28,6 +35,7 @@ export type ResultNode = {
   relatedResultIds?: string[];
   learnMore?: LearnMoreEntry[];
   followAuthor?: { name: string; url?: string };
+  watchAndFollow?: WatchAndFollowEntry[];
 };
 
 export type FlowchartNode = QuestionNode | ResultNode;
