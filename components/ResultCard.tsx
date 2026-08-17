@@ -23,15 +23,6 @@ export default function ResultCard({
 
       <p className="text-lg text-zinc-800 dark:text-zinc-200">{node.recommendation}</p>
 
-      {node.ifUnclear && (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900 dark:bg-emerald-950/40">
-          <h2 className="mb-1 text-sm font-semibold text-emerald-800 dark:text-emerald-300">
-            If this still feels unclear
-          </h2>
-          <p className="text-sm text-emerald-900/80 dark:text-emerald-200/80">{node.ifUnclear}</p>
-        </div>
-      )}
-
       <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
         <h2 className="mb-1 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Why</h2>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">{node.rationale}</p>
@@ -43,28 +34,20 @@ export default function ResultCard({
           {node.nextSteps.map((step) => (
             <li key={step}>{step}</li>
           ))}
+          {relatedResults.length > 0 && (
+            <li>
+              Once this is handled, your next priority is typically{" "}
+              <Link
+                href={`/result/${relatedResults[0].id}`}
+                className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+              >
+                {relatedResults[0].title}
+              </Link>
+              .
+            </li>
+          )}
         </ul>
       </div>
-
-      {relatedResults.length > 0 && (
-        <div>
-          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-            Related outcomes
-          </h2>
-          <ul className="space-y-1">
-            {relatedResults.map((related) => (
-              <li key={related.id}>
-                <Link
-                  href={`/result/${related.id}`}
-                  className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
-                >
-                  {related.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       {node.learnMore && node.learnMore.length > 0 && (
         <div>
@@ -89,6 +72,16 @@ export default function ResultCard({
               </li>
             ))}
           </ul>
+          {node.followAuthor?.url && (
+            <a
+              href={node.followAuthor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex w-fit items-center gap-1 rounded-full border border-emerald-300 px-3 py-1.5 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950/40"
+            >
+              Follow {node.followAuthor.name} &rarr;
+            </a>
+          )}
         </div>
       )}
 

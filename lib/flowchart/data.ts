@@ -103,8 +103,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Keep paying at least the minimums on existing debt.",
     ],
     relatedResultIds: ["r_stabilize_essentials"],
-    ifUnclear:
-      "If saving anything feels impossible right now, don't aim for $500 up front. Automate even $5 to $10 per paycheck into a separate account — the habit matters more than the amount at this stage.",
     learnMore: [
       {
         title: "The Index Card",
@@ -113,6 +111,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
+    followAuthor: { name: "Harold Pollack" },
   },
   r_stabilize_essentials: {
     id: "r_stabilize_essentials",
@@ -128,8 +127,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Look into assistance programs if the gap is about income rather than spending.",
     ],
     relatedResultIds: ["r_starter_cushion"],
-    ifUnclear:
-      "If the gap is about spending, start by tracking one month of every expense before cutting anything — you often can't see where to cut until you can see where it's going. If the gap is about income, that's a different problem (see next steps), and no amount of budgeting will fully close it.",
     learnMore: [
       {
         title: "Get Good with Money",
@@ -138,6 +135,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/povertyfinance", url: "https://www.reddit.com/r/povertyfinance/" },
     ],
+    followAuthor: { name: "Tiffany Aliche" },
   },
   r_capture_match: {
     id: "r_capture_match",
@@ -152,8 +150,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "After this, high-interest debt and building up your emergency fund are usually next.",
     ],
     relatedResultIds: ["r_attack_high_interest_debt"],
-    ifUnclear:
-      "If you're not sure how much to raise your contribution by, aim for the exact percentage your plan needs to get the full match — usually shown in your plan's summary — and set it as one one-time change through payroll rather than trying to get it perfect.",
     learnMore: [
       {
         title: "The Bogleheads' Guide to Investing",
@@ -162,6 +158,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
+    followAuthor: { name: "The Bogleheads community" },
   },
   r_attack_high_interest_debt: {
     id: "r_attack_high_interest_debt",
@@ -177,8 +174,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Look carefully at a lower-rate consolidation option if one's available.",
     ],
     relatedResultIds: ["r_full_emergency_fund"],
-    ifUnclear:
-      "If you have several balances and freeze up trying to pick an order, it doesn't need to be perfect: highest interest rate first saves the most money, smallest balance first gets you a faster win to build momentum. Either is a reasonable choice — the main thing is picking one and starting.",
     learnMore: [
       {
         title: "The Total Money Makeover",
@@ -187,6 +182,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/personalfinance wiki (debt section)", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
+    followAuthor: { name: "Dave Ramsey" },
   },
   r_full_emergency_fund: {
     id: "r_full_emergency_fund",
@@ -202,8 +198,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Lean toward the higher end if your income is variable.",
     ],
     relatedResultIds: ["r_tax_advantaged_accounts"],
-    ifUnclear:
-      "If three to six months feels like an overwhelming number, break it into a target you can actually track, like one month at a time, and automate a transfer toward it each payday.",
     learnMore: [
       {
         title: "Your Money or Your Life",
@@ -212,6 +206,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/personalfinance wiki", url: "https://www.reddit.com/r/personalfinance/wiki/index/" },
     ],
+    followAuthor: { name: "Vicki Robin" },
   },
   r_tax_advantaged_accounts: {
     id: "r_tax_advantaged_accounts",
@@ -227,8 +222,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Automate the contributions.",
     ],
     relatedResultIds: ["r_grow_further"],
-    ifUnclear:
-      "If choosing between Roth and traditional feels paralyzing, Roth is a reasonable default if you expect to be in a similar or higher tax bracket later, which is common earlier in a career — you can always adjust in future years as your income changes.",
     learnMore: [
       {
         title: "The Simple Path to Wealth",
@@ -237,6 +230,7 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/Bogleheads", url: "https://www.reddit.com/r/Bogleheads/" },
     ],
+    followAuthor: { name: "JL Collins" },
   },
   r_grow_further: {
     id: "r_grow_further",
@@ -252,8 +246,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Weigh extra debt paydown against investing.",
     ],
     relatedResultIds: ["r_tax_advantaged_accounts"],
-    ifUnclear:
-      "If you don't have a strong opinion yet on goals or investing style, a simple, low-cost diversified index fund is a reasonable default while you figure out the rest — the fundamentals being covered already put you ahead of most of this decision's stakes.",
     learnMore: [
       {
         title: "The Psychology of Money",
@@ -262,5 +254,6 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       },
       { title: "r/financialindependence", url: "https://www.reddit.com/r/financialindependence/" },
     ],
+    followAuthor: { name: "Morgan Housel" },
   },
 };

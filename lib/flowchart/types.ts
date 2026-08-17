@@ -26,8 +26,8 @@ export type ResultNode = {
   rationale: string;
   nextSteps: string[];
   relatedResultIds?: string[];
-  ifUnclear?: string;
   learnMore?: LearnMoreEntry[];
+  followAuthor?: { name: string; url?: string };
 };
 
 export type FlowchartNode = QuestionNode | ResultNode;
