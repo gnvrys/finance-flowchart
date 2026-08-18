@@ -103,6 +103,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Keep paying at least the minimums on existing debt.",
     ],
     relatedResultIds: ["r_stabilize_essentials"],
+    watchAndFollow: [
+      {
+        title: "Why Having a $1,000 Emergency Fund Is Your Top Priority!",
+        creator: "Rachel Cruze",
+        url: "https://www.youtube.com/shorts/yJqmGS0vWGA",
+      },
+    ],
     learnMore: [
       {
         title: "The Index Card",
