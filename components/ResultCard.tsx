@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { ResultNode } from "@/lib/flowchart/types";
+import { extractYouTubeVideoId } from "@/lib/flowchart/youtube";
+import YouTubeEmbed from "./YouTubeEmbed";
 
 export default function ResultCard({
   node,
@@ -49,55 +51,67 @@ export default function ResultCard({
         </ul>
       </div>
 
-      {node.watchAndFollow && node.watchAndFollow.length > 0 && (
+      {((node.watchAndFollow && node.watchAndFollow.length > 0) ||
+        (node.learnMore && node.learnMore.length > 0)) && (
         <div>
-          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Watch &amp; follow</h2>
-          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2">
-            {node.watchAndFollow.map((entry) => (
-              <a
-                key={entry.title}
-                href={entry.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex w-36 flex-shrink-0 snap-start flex-col gap-1 rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-sm transition-colors hover:border-emerald-500 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-500 dark:hover:bg-emerald-950"
-              >
-                <span className="text-lg" aria-hidden="true">
-                  ▶️
-                </span>
-                {entry.duration && (
-                  <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.duration}</span>
-                )}
-                <span className="font-medium text-zinc-800 dark:text-zinc-200">{entry.title}</span>
-                <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.creator}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Watch &amp; learn more</h2>
 
-      {node.learnMore && node.learnMore.length > 0 && (
-        <div>
-          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">Learn more</h2>
-          <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
-            {node.learnMore.map((entry) => (
-              <li key={entry.title}>
-                <span aria-hidden="true">{entry.author ? "📖" : "💬"} </span>
-                {entry.url ? (
+          {node.watchAndFollow?.map((entry) => {
+            const videoId = extractYouTubeVideoId(entry.url);
+            return (
+              <div key={entry.title} className="mb-4">
+                {videoId ? (
+                  <>
+                    <YouTubeEmbed videoId={videoId} title={entry.title} />
+                    <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
+                      {entry.duration && <>{entry.duration} &middot; </>}
+                      {entry.title} &mdash; {entry.creator}
+                    </p>
+                  </>
+                ) : (
                   <a
                     href={entry.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+                    className="flex w-36 flex-col gap-1 rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-sm transition-colors hover:border-emerald-500 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-500 dark:hover:bg-emerald-950"
                   >
-                    {entry.title}
+                    <span className="text-lg" aria-hidden="true">
+                      ▶️
+                    </span>
+                    {entry.duration && (
+                      <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.duration}</span>
+                    )}
+                    <span className="font-medium text-zinc-800 dark:text-zinc-200">{entry.title}</span>
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400">{entry.creator}</span>
                   </a>
-                ) : (
-                  <span className="text-zinc-800 dark:text-zinc-200">{entry.title}</span>
                 )}
-                {entry.author && <span> — {entry.author}</span>}
-              </li>
-            ))}
-          </ul>
+              </div>
+            );
+          })}
+
+          {node.learnMore && node.learnMore.length > 0 && (
+            <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+              {node.learnMore.map((entry) => (
+                <li key={entry.title}>
+                  <span aria-hidden="true">{entry.author ? "📖" : "💬"} </span>
+                  {entry.url ? (
+                    <a
+                      href={entry.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+                    >
+                      {entry.title}
+                    </a>
+                  ) : (
+                    <span className="text-zinc-800 dark:text-zinc-200">{entry.title}</span>
+                  )}
+                  {entry.author && <span> — {entry.author}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+
           {node.followAuthor?.url && (
             <a
               href={node.followAuthor.url}

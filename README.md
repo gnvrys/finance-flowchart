@@ -54,8 +54,8 @@ flowchart TD
 
 ## Project structure
 
-- `lib/flowchart/data.ts` — all quiz content lives here (questions, options, results, "not sure how to answer?" guidance, and each result's "Learn more" reading list, follow-the-author CTA, and "Watch & follow" video list). Editing or extending the quiz means editing this file only, no component changes needed.
-- `lib/flowchart/engine.ts` / `types.ts` — the data model and small helpers (`getNode`, `isResultNode`, etc.)
+- `lib/flowchart/data.ts` — all quiz content lives here (questions, options, results, "not sure how to answer?" guidance, and each result's "Watch & learn more" video pick, reading list, and follow-the-author CTA). Editing or extending the quiz means editing this file only, no component changes needed.
+- `lib/flowchart/engine.ts` / `types.ts` / `youtube.ts` — the data model, small helpers (`getNode`, `isResultNode`, etc.), and a YouTube URL parser for the inline video embed
 - `app/quiz` — the interactive quiz flow (client-side state via `useReducer`)
 - `app/result/[resultId]` — statically generated result pages, one per outcome
 - `scripts/validate-flowchart.ts` — a graph-integrity check (every branch resolves, every result is reachable) that runs automatically before every build
