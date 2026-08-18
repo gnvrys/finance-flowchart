@@ -60,8 +60,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Pull up the interest rate (APR) on each balance you're carrying. Most credit cards run well above 20%; many personal loans are higher too. Typical mortgages and federal student loans are usually well under 7-8%, so they don't count here.",
     options: [
-      { label: "Yes", nextNodeId: "r_attack_high_interest_debt" },
       { label: "No", nextNodeId: "q6_full_emergency_fund" },
+      { label: "Yes", nextNodeId: "r_attack_high_interest_debt" },
     ],
   },
   q6_full_emergency_fund: {
@@ -134,6 +134,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Look into assistance programs if the gap is about income rather than spending.",
     ],
     relatedResultIds: ["r_starter_cushion"],
+    watchAndFollow: [
+      {
+        title: "How to Take CONTROL of Your Money – FAST!",
+        creator: "Evan Carmichael Highlights",
+        url: "https://www.youtube.com/shorts/yWuIdkK-39c",
+      },
+    ],
     learnMore: [
       {
         title: "Get Good with Money",
@@ -157,6 +164,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "After this, high-interest debt and building up your emergency fund are usually next.",
     ],
     relatedResultIds: ["r_attack_high_interest_debt"],
+    watchAndFollow: [
+      {
+        title: "How Does a 401k Work?",
+        creator: "Your Rich BFF",
+        url: "https://www.youtube.com/shorts/KR3FDf6zT7o",
+      },
+    ],
     learnMore: [
       {
         title: "The Bogleheads' Guide to Investing",
@@ -181,6 +195,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Look carefully at a lower-rate consolidation option if one's available.",
     ],
     relatedResultIds: ["r_full_emergency_fund"],
+    watchAndFollow: [
+      {
+        title: "Debt Snowball vs Debt Avalanche: Which is Better?",
+        creator: "The Money Guy Show",
+        url: "https://www.youtube.com/shorts/5YGjJS4MSxk",
+      },
+    ],
     learnMore: [
       {
         title: "The Total Money Makeover",
@@ -205,6 +226,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Lean toward the higher end if your income is variable.",
     ],
     relatedResultIds: ["r_tax_advantaged_accounts"],
+    watchAndFollow: [
+      {
+        title: "Stop Saving 3-6 Months of Expenses (Do This Instead)",
+        creator: "The Table With AO",
+        url: "https://www.youtube.com/shorts/1ypL9OpJIKw",
+      },
+    ],
     learnMore: [
       {
         title: "Your Money or Your Life",
@@ -229,6 +257,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Automate the contributions.",
     ],
     relatedResultIds: ["r_grow_further"],
+    watchAndFollow: [
+      {
+        title: "Roth 401k vs Traditional 401k, Explained",
+        creator: "Humphrey Yang",
+        url: "https://www.youtube.com/shorts/hIrdIUBRUO4",
+      },
+    ],
     learnMore: [
       {
         title: "The Simple Path to Wealth",
@@ -253,6 +288,13 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
       "Weigh extra debt paydown against investing.",
     ],
     relatedResultIds: ["r_tax_advantaged_accounts"],
+    watchAndFollow: [
+      {
+        title: "The Actual Signifiers of Wealth",
+        creator: "The Financial Diet",
+        url: "https://www.youtube.com/shorts/S1pqfd_hcPk",
+      },
+    ],
     learnMore: [
       {
         title: "The Psychology of Money",
