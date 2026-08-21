@@ -11,8 +11,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Check your checking/savings balance right now, minus anything already earmarked for a bill due this week. If what's left is under a couple hundred dollars, or you'd have to move money around or reach for a card to cover a surprise cost, answer no.",
     options: [
-      { label: "No / not sure", nextNodeId: "r_starter_cushion" },
       { label: "Yes", nextNodeId: "q2_essentials" },
+      { label: "No / not sure", nextNodeId: "r_starter_cushion" },
     ],
   },
   q2_essentials: {
@@ -24,8 +24,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Add up last month's rent or mortgage, utilities, groceries, transportation, and minimum debt payments, then compare that to what actually came in. If you only covered it by dipping into savings or a credit card, that counts as no.",
     options: [
-      { label: "No", nextNodeId: "r_stabilize_essentials" },
       { label: "Yes", nextNodeId: "q3_match_offered" },
+      { label: "No", nextNodeId: "r_stabilize_essentials" },
     ],
   },
   q3_match_offered: {
@@ -36,8 +36,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Check your pay stub, benefits portal, or plan summary for a 401(k)/403(b) match, or ask HR. If you genuinely don't know and haven't checked, answer no for now — it's worth a five-minute look either way.",
     options: [
-      { label: "No", nextNodeId: "q5_high_interest_debt" },
       { label: "Yes", nextNodeId: "q4_capturing_match" },
+      { label: "No", nextNodeId: "q5_high_interest_debt" },
     ],
   },
   q4_capturing_match: {
@@ -47,8 +47,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Look up your plan's match formula (e.g. '50% up to 6% of pay') and compare it to your current contribution percentage in your payroll or plan portal. If you're not at or above the percentage needed to get the full match, answer no.",
     options: [
-      { label: "No", nextNodeId: "r_capture_match" },
       { label: "Yes", nextNodeId: "q5_high_interest_debt" },
+      { label: "No", nextNodeId: "r_capture_match" },
     ],
   },
   q5_high_interest_debt: {
@@ -60,8 +60,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Pull up the interest rate (APR) on each balance you're carrying. Most credit cards run well above 20%; many personal loans are higher too. Typical mortgages and federal student loans are usually well under 7-8%, so they don't count here.",
     options: [
-      { label: "No", nextNodeId: "q6_full_emergency_fund" },
       { label: "Yes", nextNodeId: "r_attack_high_interest_debt" },
+      { label: "No", nextNodeId: "q6_full_emergency_fund" },
     ],
   },
   q6_full_emergency_fund: {
@@ -72,8 +72,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Estimate one month of essential expenses (housing, utilities, food, transportation, minimum debt payments), multiply by 3 to 6, and compare that to what you actually have in accessible savings — not retirement accounts, just cash you could get to quickly.",
     options: [
-      { label: "No", nextNodeId: "r_full_emergency_fund" },
       { label: "Yes", nextNodeId: "q7_tax_advantaged" },
+      { label: "No", nextNodeId: "r_full_emergency_fund" },
     ],
   },
   q7_tax_advantaged: {
@@ -84,8 +84,8 @@ export const flowchartNodes: Record<string, FlowchartNode> = {
     notSureHelp:
       "Check whether you're actively contributing to a Roth or traditional IRA, or an HSA, beyond whatever comes out for your employer match. If you don't currently have one of those accounts open and funded, answer no.",
     options: [
-      { label: "No", nextNodeId: "r_tax_advantaged_accounts" },
       { label: "Yes", nextNodeId: "r_grow_further" },
+      { label: "No", nextNodeId: "r_tax_advantaged_accounts" },
     ],
   },
 
